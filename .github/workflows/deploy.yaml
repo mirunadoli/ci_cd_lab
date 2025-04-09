@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code                                                         uses: actions/checkout@v4                                           
+      
       - name: Set up Go
         uses: actions/setup-go@v5
         with:                                                                         go-version: '1.22'                                                                                                                                  - name: Install dependencies
-        run: go mod download                                                                                                                                # TODO 01 - Add a step to run tests                                           - name: Execute test
-        run: go test ./...   
+        run: go mod download                                                                                                                                  - name: Test code
+        run: go test ./...
 
   compile:
     runs-on: ubuntu-latest
